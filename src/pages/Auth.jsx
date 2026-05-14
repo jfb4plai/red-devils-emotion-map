@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JerseyLogo from '../components/JerseyLogo';
 import AlphabetTitle from '../components/AlphabetTitle';
-import { sendMagicLink, getSession, getMyPatch } from '../lib/supabase';
-import { supabase } from '../lib/supabase';
+import { sendMagicLink, getSession, getMyPatch, supabase } from '../lib/supabase';
 
 export default function Auth() {
   const [email, setEmail]   = useState('');
@@ -59,11 +58,11 @@ export default function Auth() {
               </div>
               <div className="bg-white/[0.03] p-4 font-mono text-xs text-white/50 leading-relaxed">
                 <div className="text-white/30 mb-2">De : noreply@mail.app.supabase.io</div>
-                <div className="text-white/30 mb-3">Objet : <span className="text-white/60">Confirm Your Signup</span></div>
+                <div className="text-white/30 mb-3">Objet : <span className="text-white/60">Red Devils Emotion Map — Ton lien de connexion</span></div>
                 <div className="border border-white/10 rounded p-3 bg-black/30">
-                  <p className="text-white/70 font-sans text-sm font-semibold mb-1">Confirm your signup</p>
-                  <p className="text-white/50 font-sans text-xs mb-2">Follow this link to confirm your user:</p>
-                  <p className="text-blue-400 font-sans text-xs underline">Confirm your mail</p>
+                  <p className="text-white/70 font-sans text-sm font-semibold mb-1">Red Devils Emotion Map</p>
+                  <p className="text-white/50 font-sans text-xs mb-2">Tu es à un clic de créer ton empreinte de supporter des Diables Rouges !</p>
+                  <p className="text-blue-400 font-sans text-xs underline">Confirmer et créer mon empreinte →</p>
                   <p className="text-white/30 font-sans text-xs mt-3 italic">
                     C'est bien l'email de Red Devils Emotion Map — clique sur le lien pour continuer.
                   </p>

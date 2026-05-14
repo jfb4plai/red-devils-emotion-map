@@ -19,7 +19,8 @@ const TRANSMISSION_LABELS = {
 export default function MyPatch() {
   const [patch, setPatch]     = useState(null);
   const [loading, setLoading] = useState(true);
-  const [copied, setCopied]   = useState(false);
+  const [copied, setCopied]         = useState(false);
+  const [copiedReferral, setCopiedReferral] = useState(false);
   const [qrUrl, setQrUrl]     = useState('');
   const canvasRef             = useRef(null);
   const navigate              = useNavigate();
@@ -50,8 +51,8 @@ export default function MyPatch() {
   function copyReferral() {
     const url = `${window.location.origin}/auth?ref=${encodeURIComponent(patch.prenom)}`;
     navigator.clipboard.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedReferral(true);
+    setTimeout(() => setCopiedReferral(false), 2000);
   }
 
   function downloadPatch() {
@@ -260,7 +261,7 @@ export default function MyPatch() {
                 onClick={copyReferral}
                 className="px-3 py-2 bg-diable-red hover:bg-red-700 text-white text-xs font-bold rounded transition-colors shrink-0"
               >
-                Copier
+                {copiedReferral ? 'Copié !' : 'Copier'}
               </button>
             </div>
           </div>
